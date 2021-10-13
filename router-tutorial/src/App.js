@@ -1,11 +1,11 @@
-import React from 'react';
-import {Route, Link, Switch} from 'react-router-dom';
-import About from './About';
-import Home from './Home';
-import Profiles from './Profiles';
-import HistorySample from './HistorySample';
+import React from "react";
+import { Route, Link, Switch } from "react-router-dom";
+import About from "./About";
+import Home from "./Home";
+import Profiles from "./Profiles";
+import HistorySample from "./HistorySample";
 
-const App = () =>{
+const App = () => {
   return (
     <div>
       <ul>
@@ -22,21 +22,22 @@ const App = () =>{
           <Link to="/HistorySample">history 예제</Link>
         </li>
       </ul>
-      <hr/>
+      <hr />
       <Switch>
-        <Route path="/" component={Home} exact={true}/>
-        <Route path={['/about','/info']} component={About}/>
-        <Route path="/profiles" component={Profiles}/>
-        <Route path="/historySample" component={HistorySample}/>
-        <Route render={({location})=>(
-          <div>
-            <h2>이 페이지는 존재하지 않습니다.</h2>
-            <p>{location.pathname}</p>
-          </div>
-        )}
+        <Route path="/" component={Home} exact={true} />
+        <Route path={["/about", "/info"]} component={About} />
+        <Route path="/profiles" component={Profiles} />
+        <Route path="/historySample" component={HistorySample} />
+        <Route
+          render={({ location }) => (
+            <div>
+              <h2>이 페이지는 존재하지 않습니다.</h2>
+              <p>{location.pathname}</p>
+            </div>
+          )}
         />
       </Switch>
     </div>
-  )
-}
+  );
+};
 export default App;

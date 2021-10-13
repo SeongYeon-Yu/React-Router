@@ -102,6 +102,12 @@ withRouter 함수는 Hoc(Higher-order-Component)
 Switch 컴포넌트는 여러 Router를 감싸서 그중 일치하는 단 하나의 라우트만을 렌더링
 SWitch를 사용하면 모든 규칙과 일치하지 않을 때 보여줄 Not Found페이지 구현 가능
 
+## NavLink
+
+현재 경로와 Link에서 사용하는 경로가 일치하는 경우 특정 스타일 혹은 css클래스를 적용할 수 있는 컴포넌트
+
+링크가 활성화되었을 때의 스타일을 적용할 때는 activeStyle값을,
+css클래스를 적용할때는 activeClassName값을 props로 넣어주기
 
 ------
 

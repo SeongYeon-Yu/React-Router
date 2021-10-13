@@ -3,7 +3,7 @@ import { NavLink, Route } from "react-router-dom";
 import Profile from "./Profile";
 import WithRouterSample from "./WithRouterSample";
 
-const Profiles = ({ match }) => {
+const Profiles = () => {
   const activeStyle = {
     background: 'black',
     color:'white'
@@ -13,10 +13,10 @@ const Profiles = ({ match }) => {
       <h3>사용자 목록:</h3>
       <ul>
         <li>
-          <NavLink to="/profiles/velopert">velopert</NavLink>
+          <NavLink activeStyle={activeStyle} to="/profiles/velopert">velopert</NavLink>
         </li>
         <li>
-          <NavLink to="/profiles/gildong">gildong</NavLink>
+          <NavLink activeStyle={activeStyle} to="/profiles/gildong">gildong</NavLink>
         </li>
       </ul>
       <Route

@@ -92,6 +92,16 @@ history 객체는 라우트로 사용된 컴포넌트에 match, location과 함�
 history란!
 특정 버튼 눌렀을 때 뒤로가기, 로그인 후 화면 전환, 다른 페이지로 이탈하는거 방지
 
+## withRouter
+
+withRouter 함수는 Hoc(Higher-order-Component)
+라우트로 사용된 컴포넌트가 아니어도 match, location, history 객체를 접근할 수 있게 해줌.
+
+## Switch
+
+Switch 컴포넌트는 여러 Router를 감싸서 그중 일치하는 단 하나의 라우트만을 렌더링
+SWitch를 사용하면 모든 규칙과 일치하지 않을 때 보여줄 Not Found페이지 구현 가능
+
 
 ------
 

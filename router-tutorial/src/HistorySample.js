@@ -8,8 +8,8 @@ class HistorySample extends Component {
   handleGoHome = () => {
     this.props.history.push("/");
   };
-  componeneDidMount() {
-    this.unblock = this.props.history.block("정말 떠나실 건가요?");
+  componentDidMount() {
+    this.unblock = this.props.history.block('정말 떠나실건가요?');
   }
   componentWillUnmount() {
     if (this.unblock) {

@@ -45,70 +45,69 @@ Router라는 컴포넌트를 사용하여 사용자의 현재 경로에 따라 �
 ````<Route path="주소규칙" compoonent={보여줄컴포넌트}/>````
 exact={true} 를 입력하면 exact란 props를 true로 설정한것
 
-### 9.4 styled-components
+Link컴포넌트는 클릭하면 다른 주소로 이동시켜 주는 컴포넌트
+웹 애플리케이션에서 a태그와 유사하지만 태그를 직접 사용할 수 없다!
+-> 페이지를 전환하는 과정에서 페이지를 새로 불러오기 때문에 애플리케이션이 들고 있던 상태를 모두 날려버림.
+렌더링된 컴포넌트들도 모두 사라지고 다시 처음부터 렌더링한다.
 
-내용 placeholder
+반면에, Link컴포넌트는 페이지를 새로 불러오지 않고 애플리케이션은 그대로 유지한 상태에서 페이지의 주소만 변경.
+Link컴포넌트 자체는 a태그로 이루어져 있지만, 페이지 전환을 방지하는 기능이 내장되어있음!
 
-### 9.5 정리
 
-내용 placeholder
 
-## 10장
+### 13.4 URL 파라미터와 쿼리
 
-### 10.1 프로젝트 준비하기
+페이지 주소를 정의할 때 가끔 유동적인 값을 전달해야할 때
+파라미터와 쿼리로 나눌 수 있음
+파라미터 /profile/velopert
+쿼리 /about?details=true 
 
-내용 placeholder
+url파라미터를 사용할 떄는 라우트로 사용되는 컴포넌트에서 받아오는 match라는 객체안의 params값 참조
+match 객체 안에는 현재 컴포넌트가 어떤 경로 규칙에 의해 보이는지에 대한 정ㅇ보가 필요함.
 
-### 10.2 UI 구성하기
 
-내용 placeholder
+쿼리는 location객체에 들어있는 search값에서 조회
+location객체는 라우트로 사용된 컴포넌트에게 props로 전달
 
-### 10.3 기능 구현하기
+URL쿼리를 읽을 때는 위 객체가 지닌 값중에서 search값을 확인해야함
+문자열형태로 여러가지 값을 설정할 수 있음
 
-내용 placeholder
+search값에서 특정 값을 읽어오기 위해서는 이 문자열을 객체 형태로 변환해주어야함.
 
-### 10.4 정리
+쿼리 문자열 => 객체로 변환할 때는 'qs' 라이브러리
 
-내용 placeholder
 
-## 11장
 
-### 11.1 많은 데이터 렌더링하기
+### 13.5 서브라우트
 
-내용 placeholder
+서브 라우트는 라우트 내부에 또 라우트를 정의하는 것
 
-### 11.2 크롬 개발자 도구를 통한 성능 모니터링
+### 13.6 서브라우트
 
-내용 placeholder
+## history
 
-### 11.3 느려지는 원인 분석
+history 객체는 라우트로 사용된 컴포넌트에 match, location과 함께 전달되는 props중 하나
+이 객체를 통해 컴포넌트 내에 구현하는 메서드에서 라우터 API를 호출할 수 있다.
 
-내용 placeholder
+history란!
+특정 버튼 눌렀을 때 뒤로가기, 로그인 후 화면 전환, 다른 페이지로 이탈하는거 방지
 
-### 11.4 React.memo를 사용하여 컴포넌트 성능 최적화
+## withRouter
 
-내용 placeholder
+withRouter 함수는 Hoc(Higher-order-Component)
+라우트로 사용된 컴포넌트가 아니어도 match, location, history 객체를 접근할 수 있게 해줌.
 
-### 11.5 onToggle, onRemove 함수가 바뀌지 않게 하기
+## Switch
 
-내용 placeholder
+Switch 컴포넌트는 여러 Router를 감싸서 그중 일치하는 단 하나의 라우트만을 렌더링
+SWitch를 사용하면 모든 규칙과 일치하지 않을 때 보여줄 Not Found페이지 구현 가능
 
-### 11.6 불변성의 중요성
+## NavLink
 
-내용 placeholder
+현재 경로와 Link에서 사용하는 경로가 일치하는 경우 특정 스타일 혹은 css클래스를 적용할 수 있는 컴포넌트
 
-### 11.7 TodoList 컴포넌트 최적화하기
-
-내용 placeholder
-
-### 11.8 react-virtualized를 사용한 렌더링 최적화
-
-내용 placeholder
-
-### 11.9 정리
-
-내용 placeholder
+링크가 활성화되었을 때의 스타일을 적용할 때는 activeStyle값을,
+css클래스를 적용할때는 activeClassName값을 props로 넣어주기
 
 ------
 
-질문, 이해가 안 갔던 것, 궁금한 것, 스터디장이나 다른 사람들에게 물어보고 싶은 것, 기타 등등이 있으시면 써주시고, 이 문구는 지워주세요!
